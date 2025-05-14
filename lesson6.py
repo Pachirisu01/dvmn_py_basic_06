@@ -20,9 +20,9 @@ def password_score_all(password):
     return score
 
 
-print('Рейтинг пароля:', password_score_all(password))
-
-
+if __name__ == "__main__":
+	print('Рейтинг пароля:', password_score_all(password))
+	password_score_all(password)
 
 
 
