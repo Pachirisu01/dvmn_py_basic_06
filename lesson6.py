@@ -1,7 +1,4 @@
-PASSWORD = input()
-
-
-print('Введите пароль: ', PASSWORD)
+PASSWORD = input("Введите пароль: ")
 
 
 def password_score_all(PASSWORD):
@@ -20,9 +17,8 @@ def password_score_all(PASSWORD):
 
 
 if __name__ == "__main__":
-	print('Рейтинг пароля:', password_score_all(PASSWORD))
-	password_score_all(PASSWORD)
-
+    print(f"Введённый пароль: {PASSWORD}")
+    print(f"Рейтинг пароля: {password_score_all(PASSWORD)}")
 
 
 
