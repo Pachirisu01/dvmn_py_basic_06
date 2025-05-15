@@ -1,25 +1,50 @@
-PASSWORD = input("Введите пароль: ")
 
+def has_digit(password):
+    for letter in password:
+        if letter.isdigit():
+            return True
+    return False
 
-def password_score_all(PASSWORD):
+def has_letters(password):
+    for letter in password:
+        if letter.isalpha():
+            return True
+    return False
+
+def has_upper_letters(password):
+    for letter in password:
+        if letter.isupper():
+            return True
+    return False
+
+def has_lower_letters(password):
+    for letter in password:
+        if letter.islower():
+            return True
+    return False
+
+def is_very_long(password):
+    return len(password) >= 12
+
+def main():
+    password = input("Введите пароль: ")
     score = 0
-    if any(letter.isdigit() for letter in PASSWORD):
+    if has_digit(password):
         score += 2
-    if any(letter.isupper() for letter in PASSWORD):
+    if has_letters(password):
         score += 2
-    if any(letter.islower() for letter in PASSWORD):
+    if has_upper_letters(password):
         score += 2
-    if any(not letter.isalpha() and not letter.isdigit() for letter in PASSWORD):
-       	score += 2
-    if len(PASSWORD) >= 12:  
+    if has_lower_letters(password):
         score += 2
+    if is_very_long(password):
+        score += 2
+    print('Рейтинг пароля : ', score)
     return score
 
 
+
 if __name__ == "__main__":
-    print(f"Введённый пароль: {PASSWORD}")
-    print(f"Рейтинг пароля: {password_score_all(PASSWORD)}")
-
-
+    main()
 
 
