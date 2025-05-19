@@ -3,8 +3,8 @@ def has_digit(password):
     return any(character.isdigit() for character in password)
 
 
-def has_letters(password):
-    return any(character.isalpha() for character in password)
+def has_symbols(password):
+    return any(not character.isalnum() for character in password)
 
 
 def has_upper_letters(password):
@@ -25,7 +25,7 @@ def main():
 
     check_points= [
         (has_digit, 2),
-        (has_letters, 2),
+        (has_symbols, 2),
         (has_upper_letters, 2),
         (has_lower_letters, 2),
         (is_very_long, 2)
