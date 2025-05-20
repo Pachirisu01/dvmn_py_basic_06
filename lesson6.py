@@ -29,7 +29,7 @@ def main():
         (has_upper_letters, 2),
         (has_lower_letters, 2),
         (is_very_long, 2)
-        ]
+    ]
 
     for check, points in check_points:
         if check(password):
